@@ -93,7 +93,7 @@ const WhyThisFormation = () => {
 
           <div className="mb-4">
             <SplitText
-              text="Pourquoi Cette Formation ?"
+              text="Pourquoi moi ?"
               tag="h2"
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground"
               delay={25}
@@ -186,7 +186,7 @@ const WhyThisFormation = () => {
                   <h3 className="text-2xl font-bold text-foreground">Les Solutions</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  Ce que vous apprendrez dans la formation
+                  Ce que vous apprendrez dans ce coaching
                 </p>
               </div>
             </AnimatedContent>

@@ -26,7 +26,7 @@ const FAQ = () => {
     {
       id: 'faq-2',
       question: 'Ai-je besoin d\'expérience préalable ?',
-      answer: 'Absolument pas ! La formation est conçue pour les débutants complets. Nous partons de zéro et vous guidons étape par étape. Même si vous n\'avez jamais créé de vidéo ou utilisé d\'outils IA, vous serez capable de lancer votre première chaîne dès la fin du Module 3. Plus de 70% de nos élèves n\'avaient aucune expérience avant de commencer.'
+      answer: 'Absolument pas ! Le Coaching est conçue pour les débutants complets. Nous partons de zéro et vous guidons étape par étape. Même si vous n\'avez jamais créé de vidéo ou utilisé d\'outils IA, vous serez capable de lancer votre première chaîne dès la fin du Module 3. Plus de 70% de nos élèves n\'avaient aucune expérience avant de commencer.'
     },
     {
       id: 'faq-3',
@@ -40,13 +40,13 @@ const FAQ = () => {
     },
     {
       id: 'faq-5',
-      question: 'La formation est-elle mise à jour ?',
-      answer: 'Oui, absolument ! YouTube et les outils IA évoluent constamment. La formation est mise à jour gratuitement tous les trimestres avec les dernières stratégies, outils et changements d\'algorithme. Vous recevez un email à chaque mise à jour. L\'accès à vie signifie que vous bénéficiez de toutes les futures améliorations sans payer un centime de plus.'
+      question: 'Le Coaching est-il mis à jour ?',
+      answer: 'Oui, absolument ! YouTube et les outils IA évoluent constamment. Le Coaching est mis à jour gratuitement tous les trimestres avec les dernières stratégies, outils et changements d\'algorithme. Vous recevez un email à chaque mise à jour. L\'accès à vie signifie que vous bénéficiez de toutes les futures améliorations sans payer un centime de plus.'
     },
     {
       id: 'faq-6',
       question: 'Y a-t-il un support après achat ?',
-      answer: 'Bien sûr ! Vous avez accès à notre support email 7j/7 avec un délai de réponse moyen de 24h. La formule Formation + Coaching inclut un support prioritaire (réponse sous 12h) et des sessions 1-on-1. Vous rejoignez également notre communauté Discord privée où vous pouvez échanger avec d\'autres élèves et notre équipe.'
+      answer: 'Bien sûr ! Vous avez accès à notre support email 7j/7 avec un délai de réponse moyen de 24h. La formule Coaching inclut un support prioritaire (réponse sous 12h) et des sessions 1-on-1. Vous rejoignez également notre communauté Discord privée où vous pouvez échanger avec d\'autres élèves et notre équipe.'
     }
   ];
 
