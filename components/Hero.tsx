@@ -58,7 +58,7 @@ const Hero = () => {
           {/* Main title with SplitText animation */}
           <div className="mb-6">
             <SplitText
-              text="YouTube Automation 2025 : De 0 à 20K$/mois avec l'IA"
+              text="YouTube Automation 2025 : De 0 à 10K$/mois avec l'IA"
               tag="h1"
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight px-4"
               delay={50}

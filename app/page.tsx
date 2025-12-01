@@ -7,7 +7,6 @@ import BonusInclus from '@/components/BonusInclus';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import FinalCTA from '@/components/FinalCTA';
-import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import ModulesStack from '@/components/ModulesStack';
 
@@ -26,9 +25,9 @@ export default function Home() {
           { label: 'FAQ', ariaLabel: 'Questions fréquentes', link: '#faq' }
         ]}
         socialItems={[
-          { label: 'YouTube', link: 'https://youtube.com' },
-          { label: 'Twitter', link: 'https://twitter.com' },
-          { label: 'Instagram', link: 'https://instagram.com' }
+          { label: 'YouTube', link: 'https://youtube.com/@daviddalyy?si=0Ke4-7FJjxy6vN9_' },
+          { label: 'Twitter', link: 'https://x.com/element_221?s=21' },
+          { label: 'Instagram', link: 'https://www.instagram.com/_daviddaly?igsh=eW9kaHZ6NmNlcDg3&utm_source=qr' }
         ]}
         displaySocials={true}
         displayItemNumbering={true}
@@ -47,7 +46,6 @@ export default function Home() {
         <FAQ />
         <FinalCTA />
       </main>
-      <Footer />
       <ScrollToTop />
     </>
   );

@@ -10,7 +10,7 @@ const AboutFormateur = () => {
   const achievements = [
     {
       icon: TrendingUp,
-      stat: '20K+',
+      stat: '10K+',
       label: '$/mois générés'
     },
     {
@@ -122,13 +122,13 @@ const AboutFormateur = () => {
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     Depuis 2020, j&apos;ai bâti un empire de chaînes YouTube faceless générant
-                    plus de <span className="text-primary font-semibold">20K$/mois</span> en
+                    plus de <span className="text-primary font-semibold">10K$/mois</span> en
                     revenus passifs.
                   </p>
 
                   <p>
                     Ma mission : vous transmettre <span className="text-accent font-semibold">
-                    exactement la même méthode</span> que j&apos;utilise pour créer et gérer
+                      exactement la même méthode</span> que j&apos;utilise pour créer et gérer
                     mes 10 chaînes rentables, sans jamais apparaître devant la caméra.
                   </p>
 

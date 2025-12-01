@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import AnimatedContent from '@/components/AnimatedContent';
 import SplitText from '@/components/SplitText';
-import { Gift, Sparkles, FileText, Crown, Shield, CheckCircle2 } from 'lucide-react';
+import { Gift, Sparkles, Shield, CheckCircle2 } from 'lucide-react';
 
 const BonusInclus = () => {
   const bonuses = [
@@ -13,33 +13,14 @@ const BonusInclus = () => {
       icon: Gift,
       title: 'Mini Formation Montage Offerte',
       description: 'Templates CapCut premium + tutoriels étape par étape pour créer des vidéos virales',
-      value: '197€',
       color: 'from-purple-500/20 to-pink-500/20'
     },
     {
       id: 2,
       icon: Sparkles,
-      title: 'Accès Logiciels IA Gratuits',
-      description: 'Comptes et crédits gratuits pour ElevenLabs, ChatGPT, Midjourney et + (valeur 500€)',
-      value: '500€',
+      title: 'Accès  à la communauté School',
+      description: 'Accès à la communauté School avec plus de 100 vidéos offertes',
       color: 'from-blue-500/20 to-cyan-500/20'
-    },
-    {
-      id: 3,
-      icon: FileText,
-      title: 'Templates + Checklists Prêts',
-      description: 'Scripts, miniatures, descriptions, SOPs complètes pour démarrer immédiatement',
-      value: '297€',
-      color: 'from-green-500/20 to-emerald-500/20'
-    },
-    {
-      id: 4,
-      icon: Crown,
-      title: 'Coaching Premium 1000€',
-      description: 'Sessions 1-on-1 personnalisées pour accélérer vos résultats (places limitées)',
-      value: '1000€',
-      color: 'from-amber-500/20 to-orange-500/20',
-      isPremium: true
     }
   ];
 
@@ -52,17 +33,6 @@ const BonusInclus = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16">
-          <AnimatedContent
-            direction="vertical"
-            distance={30}
-            duration={0.6}
-          >
-            <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-6">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-                Valeur Totale : 1994€
-              </span>
-            </div>
-          </AnimatedContent>
 
           <div className="mb-4">
             <SplitText
@@ -99,16 +69,8 @@ const BonusInclus = () => {
               duration={0.7}
               delay={0.2 + index * 0.1}
             >
-              <Card className={`group relative p-6 sm:p-8 bg-card border-border hover:border-accent/50 transition-all duration-500 cursor-pointer transform hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(255,184,0,0.15)] h-full ${bonus.isPremium ? 'ring-2 ring-accent/20' : ''}`}>
-                {/* Premium badge for coaching */}
-                {bonus.isPremium && (
-                  <div className="absolute -top-3 -right-3">
-                    <div className="bg-gradient-to-r from-accent to-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
-                      PREMIUM
-                    </div>
-                  </div>
-                )}
-
+              <Card className={`group relative p-6 sm:p-8 bg-card border-border hover:border-accent/50 transition-all duration-500 cursor-pointer transform hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(255,184,0,0.15)] h-full`}>
+  
                 {/* Gradient background effect */}
                 <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${bonus.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
@@ -133,12 +95,6 @@ const BonusInclus = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     {bonus.description}
                   </p>
-
-                  {/* Value */}
-                  <div className="flex items-center gap-2 pt-4 border-t border-border">
-                    <span className="text-xs text-muted-foreground">Valeur :</span>
-                    <span className="text-lg font-bold text-accent">{bonus.value}</span>
-                  </div>
                 </div>
 
                 {/* Shine effect on hover */}
@@ -150,7 +106,7 @@ const BonusInclus = () => {
           ))}
         </div>
 
-        {/* Garantie Section */}
+        {/* Politique No Refund */}
         <AnimatedContent
           direction="vertical"
           distance={50}
@@ -158,9 +114,9 @@ const BonusInclus = () => {
           delay={0.8}
         >
           <div className="max-w-3xl mx-auto">
-            <Card className="relative p-8 sm:p-10 bg-gradient-to-br from-accent/5 via-background to-accent/5 border-2 border-accent/30 hover:border-accent/50 transition-all duration-500 overflow-hidden group">
+            <Card className="relative p-8 sm:p-10 bg-gradient-to-br from-primary/5 via-background to-primary/5 border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 overflow-hidden group">
               {/* Animated border glow */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent/20 via-amber-500/20 to-accent/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10" />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 via-red-500/20 to-primary/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10" />
 
               {/* Content */}
               <div className="relative z-10">
@@ -169,48 +125,48 @@ const BonusInclus = () => {
                   <div className="flex-shrink-0">
                     <div className="relative">
                       {/* Pulsing ring */}
-                      <div className="absolute inset-0 bg-accent/20 rounded-full animate-ping" />
-                      <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-accent to-amber-600 flex items-center justify-center shadow-lg">
+                      <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping" />
+                      <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary to-red-600 flex items-center justify-center shadow-lg">
                         <Shield className="w-8 h-8 text-white" />
                       </div>
                     </div>
                   </div>
 
                   <div className="text-center sm:text-left flex-1">
-                    <Badge className="bg-accent text-white border-0 mb-3 text-sm px-4 py-1">
-                      GARANTIE 30 JOURS
+                    <Badge className="bg-primary text-white border-0 mb-3 text-sm px-4 py-1">
+                      ENGAGEMENT TOTAL
                     </Badge>
                     <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                      Satisfait ou Remboursé
+                      No Refund Policy
                     </h3>
                     <p className="text-muted-foreground">
-                      Essayez la formation sans risque pendant 30 jours
+                      Engagement sérieux uniquement - Pas de remboursement
                     </p>
                   </div>
                 </div>
 
                 {/* Features */}
-                <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-accent/20">
+                <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-primary/20">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-muted-foreground">
-                      Remboursement intégral si vous n'êtes pas satisfait
+                      Aucun remboursement - Engagement total requis
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-muted-foreground">
-                      Aucune question posée, processus simple et rapide
+                      Politique stricte pour éviter les abus
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-muted-foreground">
-                      Gardez tous les bonus même en cas de remboursement
+                      Places limitées aux personnes vraiment motivées
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-muted-foreground">
                       Support email réactif 7j/7 pour toute question
                     </p>
@@ -218,9 +174,9 @@ const BonusInclus = () => {
                 </div>
 
                 {/* Trust message */}
-                <div className="mt-6 pt-6 border-t border-accent/20 text-center">
+                <div className="mt-6 pt-6 border-t border-primary/20 text-center">
                   <p className="text-sm font-medium text-foreground">
-                    Rejoignez <span className="text-accent font-bold">500+ créateurs</span> qui nous font confiance
+                    Rejoignez <span className="text-primary font-bold">500+ créateurs</span> qui nous font confiance
                   </p>
                 </div>
               </div>

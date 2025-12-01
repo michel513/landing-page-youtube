@@ -62,7 +62,7 @@ const FinalCTA = () => {
           >
             <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
               Rejoins des centaines de créateurs qui génèrent déjà{' '}
-              <span className="text-accent font-semibold">5K-20K$/mois</span>{' '}
+              <span className="text-accent font-semibold">5K-10K$/mois</span>{' '}
               avec YouTube Automation
             </p>
           </AnimatedContent>

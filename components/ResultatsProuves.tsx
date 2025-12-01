@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import AnimatedContent from '@/components/AnimatedContent';
 import SplitText from '@/components/SplitText';
-import { TrendingUp, DollarSign, Target, Star, User } from 'lucide-react';
+import { Star, User } from 'lucide-react';
 
 const ResultatsProuves = () => {
   const statsImages = [

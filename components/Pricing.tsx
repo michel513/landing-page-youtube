@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -9,30 +10,34 @@ import SplitText from '@/components/SplitText';
 import { Check, Zap, Crown } from 'lucide-react';
 
 const Pricing = () => {
+  // Initialize as null to match server render, then update on client mount
   const [spotsLeft, setSpotsLeft] = useState<number | null>(null);
 
+  // Generate random number only on client side to avoid hydration mismatch
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    // Generate random number only on client side
     setSpotsLeft(Math.floor(Math.random() * 5) + 3);
   }, []);
+
   const plans = [
     {
       id: 'formation',
-      name: 'Formation Seule',
-      icon: Zap,
-      price: 497, // TODO: À définir par l'utilisateur
+      name: 'Appel Coaching Payant',
+      icon: Zap, // We'll keep Zap or change to Calendar if imported
+      price: 215,
       currency: '€',
-      description: 'Tout ce dont vous avez besoin pour démarrer',
+      description: 'Session stratégique privée pour accélérer vos résultats',
       features: [
-        '10 modules complets (10h de contenu)',
-        'Tous les bonus inclus (1994€ de valeur)',
-        'Templates et checklists prêts à l\'emploi',
-        'Accès à vie à la formation',
-        'Mises à jour gratuites à vie',
-        'Support par email',
-        'Communauté privée Discord'
+        'Appel vidéo de 60 minutes',
+        'Analyse approfondie de votre situation',
+        'Plan d\'action personnalisé',
+        'Réponses à toutes vos questions',
+        'Enregistrement de l\'appel fourni',
+        'Accès prioritaire au coaching',
+        'Bonus: Audit de votre chaîne inclus'
       ],
-      cta: 'Commencer Maintenant',
+      cta: 'Réserver un Appel',
+      href: 'https://david-ndiaye.youcanbook.me/',
       popular: false,
       highlighted: false
     },
@@ -40,20 +45,21 @@ const Pricing = () => {
       id: 'coaching',
       name: 'Formation + Coaching',
       icon: Crown,
-      price: 1497, // TODO: À définir (Formation + 1000€)
+      price: 1000,
       currency: '€',
       description: 'Pour des résultats maximaux et accélérés',
       features: [
         'Tout de la Formation Seule',
-        'Coaching premium individuel (1000€)',
+        'Coaching premium individuel 1,5 mois (1000€)',
         'Sessions 1-on-1 personnalisées',
         'Suivi personnalisé de vos chaînes',
         'Analyse de performances détaillée',
         'Priorisation des réponses support',
         'Accès aux mises à jour en avant-première',
-        'Garantie résultats ou coaching prolongé'
+        'Aucun remboursement (engagement total)'
       ],
       cta: 'Réserver Ma Place',
+      href: 'https://buy.stripe.com/3cI9AT39LbCn5fb3gF6Na0k',
       popular: true,
       highlighted: true,
       badge: 'POPULAIRE'
@@ -117,11 +123,10 @@ const Pricing = () => {
               delay={0.3 + index * 0.2}
             >
               <Card
-                className={`group relative p-8 bg-card border-2 transition-all duration-500 h-full flex flex-col ${
-                  plan.highlighted
-                    ? 'border-accent lg:-translate-y-4 shadow-[0_20px_60px_rgba(255,184,0,0.2)] hover:shadow-[0_25px_70px_rgba(255,184,0,0.3)]'
-                    : 'border-border hover:border-primary/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.1)]'
-                } transform hover:scale-[1.02]`}
+                className={`group relative p-8 bg-card border-2 transition-all duration-500 h-full flex flex-col ${plan.highlighted
+                  ? 'border-accent lg:-translate-y-4 shadow-[0_20px_60px_rgba(255,184,0,0.2)] hover:shadow-[0_25px_70px_rgba(255,184,0,0.3)]'
+                  : 'border-border hover:border-primary/30 hover:shadow-[0_20px_60px_rgba(0,0,0,0.1)]'
+                  } transform hover:scale-[1.02]`}
               >
                 {/* Popular Badge */}
                 {plan.popular && (
@@ -133,21 +138,19 @@ const Pricing = () => {
                 )}
 
                 {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                  plan.highlighted
-                    ? 'bg-gradient-to-br from-accent/5 to-amber-500/5'
-                    : 'bg-gradient-to-br from-primary/5 to-accent/5'
-                }`} />
+                <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${plan.highlighted
+                  ? 'bg-gradient-to-br from-accent/5 to-amber-500/5'
+                  : 'bg-gradient-to-br from-primary/5 to-accent/5'
+                  }`} />
 
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Icon and Name */}
                   <div className="flex items-center gap-4 mb-6">
-                    <div className={`p-3 rounded-xl ${
-                      plan.highlighted
-                        ? 'bg-accent/10 group-hover:bg-accent/20'
-                        : 'bg-primary/10 group-hover:bg-primary/20'
-                    } transition-colors duration-300`}>
+                    <div className={`p-3 rounded-xl ${plan.highlighted
+                      ? 'bg-accent/10 group-hover:bg-accent/20'
+                      : 'bg-primary/10 group-hover:bg-primary/20'
+                      } transition-colors duration-300`}>
                       <plan.icon className={`w-7 h-7 ${plan.highlighted ? 'text-accent' : 'text-primary'}`} />
                     </div>
                     <div>
@@ -163,9 +166,8 @@ const Pricing = () => {
                   {/* Price */}
                   <div className="mb-8">
                     <div className="flex items-baseline gap-2">
-                      <span className={`text-5xl sm:text-6xl font-bold ${
-                        plan.highlighted ? 'text-accent' : 'text-primary'
-                      }`}>
+                      <span className={`text-5xl sm:text-6xl font-bold ${plan.highlighted ? 'text-accent' : 'text-primary'
+                        }`}>
                         {plan.price}
                       </span>
                       <span className="text-2xl font-semibold text-muted-foreground">
@@ -183,14 +185,12 @@ const Pricing = () => {
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <div className="flex-shrink-0 mt-0.5">
-                            <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                              plan.highlighted
-                                ? 'bg-accent/10'
-                                : 'bg-green-500/10'
-                            }`}>
-                              <Check className={`w-3.5 h-3.5 ${
-                                plan.highlighted ? 'text-accent' : 'text-green-600'
-                              }`} />
+                            <div className={`w-5 h-5 rounded-full flex items-center justify-center ${plan.highlighted
+                              ? 'bg-accent/10'
+                              : 'bg-green-500/10'
+                              }`}>
+                              <Check className={`w-3.5 h-3.5 ${plan.highlighted ? 'text-accent' : 'text-green-600'
+                                }`} />
                             </div>
                           </div>
                           <span className="text-sm text-foreground leading-relaxed">
@@ -202,33 +202,59 @@ const Pricing = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <Button
-                    size="lg"
-                    className={`w-full font-semibold text-base py-6 transition-all duration-300 transform hover:scale-105 ${
-                      plan.highlighted
+                  {plan.href ? (
+                    <Link href={plan.href} className="w-full block cursor-pointer">
+                      <Button
+                        size="lg"
+                        className={`w-full font-semibold text-base py-6 transition-all duration-300 transform hover:scale-105 ${plan.highlighted
+                          ? 'bg-gradient-to-r from-accent to-amber-600 hover:from-accent/90 hover:to-amber-700 text-white shadow-[0_10px_30px_rgba(255,184,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,184,0,0.4)]'
+                          : 'bg-primary hover:bg-primary/90 text-white shadow-[0_10px_30px_rgba(255,0,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,0,0,0.4)]'
+                          }`}
+                      >
+                        {plan.cta}
+                        <svg
+                          className="ml-2 w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
+                        </svg>
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button
+                      size="lg"
+                      className={`w-full font-semibold text-base py-6 transition-all duration-300 transform hover:scale-105 ${plan.highlighted
                         ? 'bg-gradient-to-r from-accent to-amber-600 hover:from-accent/90 hover:to-amber-700 text-white shadow-[0_10px_30px_rgba(255,184,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,184,0,0.4)]'
                         : 'bg-primary hover:bg-primary/90 text-white shadow-[0_10px_30px_rgba(255,0,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,0,0,0.4)]'
-                    }`}
-                  >
-                    {plan.cta}
-                    <svg
-                      className="ml-2 w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                        }`}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                  </Button>
+                      {plan.cta}
+                      <svg
+                        className="ml-2 w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </Button>
+                  )}
 
                   {/* Additional info for popular plan */}
                   {plan.highlighted && spotsLeft !== null && (
-                    <p className="text-center text-xs text-muted-foreground mt-4">
+                    <p className="text-center text-xs text-muted-foreground mt-4" suppressHydrationWarning>
                       Places limitées • {spotsLeft} places restantes ce mois
                     </p>
                   )}
@@ -258,7 +284,7 @@ const Pricing = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-green-600" />
-                <span>Garantie 30 jours</span>
+                <span>No Refund Policy</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-green-600" />
