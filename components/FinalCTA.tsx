@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import AnimatedContent from '@/components/AnimatedContent';
 import { ArrowRight, Zap, Users } from 'lucide-react';
 
@@ -79,7 +78,7 @@ const FinalCTA = () => {
                 size="lg"
                 className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-10 py-7 text-lg font-bold shadow-[0_0_40px_rgba(255,0,0,0.4)] hover:shadow-[0_0_60px_rgba(255,0,0,0.6)] transition-all duration-300 transform hover:scale-105 group"
               >
-                Rejoindre la Formation
+                Rejoindre le coaching
                 <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Button>
 

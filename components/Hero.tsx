@@ -1,17 +1,10 @@
 'use client';
 
-import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import AnimatedContent from '@/components/AnimatedContent';
 import SplitText from '@/components/SplitText';
 
 const Hero = () => {
-  const stats = [
-    { label: '10 Modules', icon: '📚' },
-    { label: '10h de Contenu', icon: '⏱️' },
-    { label: 'Templates Inclus', icon: '🎨' }
-  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -32,28 +25,6 @@ const Hero = () => {
       {/* Main content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge announcement */}
-          <AnimatedContent
-            direction="vertical"
-            distance={30}
-            duration={0.6}
-            delay={0.1}
-          >
-            <div className="inline-flex items-center justify-center mb-8">
-              <Badge
-                variant="outline"
-                className="px-6 py-2 text-sm font-medium bg-white/5 border-white/10 text-white backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-              >
-                <span className="inline-flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                  </span>
-                  Nouveau : Formation 2025
-                </span>
-              </Badge>
-            </div>
-          </AnimatedContent>
 
           {/* Main title with SplitText animation */}
           <div className="mb-6">
@@ -80,7 +51,7 @@ const Hero = () => {
             delay={0.8}
           >
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Formation complète pour créer et gérer{' '}
+              Coaching complète pour créer et gérer{' '}
               <span className="text-accent font-semibold">1 à 10 chaînes faceless</span>{' '}
               rentables en 2025
             </p>
@@ -98,7 +69,7 @@ const Hero = () => {
                 size="lg"
                 className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-semibold shadow-[0_0_30px_rgba(255,0,0,0.3)] hover:shadow-[0_0_40px_rgba(255,0,0,0.5)] transition-all duration-300 transform hover:scale-105"
               >
-                Accéder à la Formation
+                Reserver un appel
                 <svg
                   className="ml-2 w-5 h-5"
                   fill="none"
@@ -119,57 +90,8 @@ const Hero = () => {
                 variant="outline"
                 className="w-full sm:w-auto border-2 border-white/20 bg-white/5 hover:bg-white/10 text-white px-8 py-6 text-lg font-semibold backdrop-blur-sm transition-all duration-300"
               >
-                Voir le Programme
-                <svg
-                  className="ml-2 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
+                Prendre un coaching
               </Button>
-            </div>
-          </AnimatedContent>
-
-          {/* Statistics badges */}
-          <AnimatedContent
-            direction="vertical"
-            distance={30}
-            duration={0.8}
-            delay={1.6}
-          >
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="group relative"
-                >
-                  {/* Glassmorphism card */}
-                  <div className="relative px-6 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
-                    {/* Glow effect on hover */}
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 -z-10" />
-
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">{stat.icon}</span>
-                      <span className="text-white font-semibold text-sm sm:text-base whitespace-nowrap">
-                        {stat.label}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </AnimatedContent>
 

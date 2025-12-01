@@ -37,7 +37,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              La formation complète pour créer et gérer des chaînes YouTube faceless rentables.
+              Le coaching complète pour créer et gérer des chaînes YouTube faceless rentables.
               De 0 à 10K$/mois avec l&apos;IA et l&apos;automatisation.
             </p>
           </div>

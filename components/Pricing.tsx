@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -203,30 +202,29 @@ const Pricing = () => {
 
                   {/* CTA Button */}
                   {plan.href ? (
-                    <Link href={plan.href} className="w-full block cursor-pointer">
-                      <Button
-                        size="lg"
-                        className={`w-full font-semibold text-base py-6 transition-all duration-300 transform hover:scale-105 ${plan.highlighted
-                          ? 'bg-gradient-to-r from-accent to-amber-600 hover:from-accent/90 hover:to-amber-700 text-white shadow-[0_10px_30px_rgba(255,184,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,184,0,0.4)]'
-                          : 'bg-primary hover:bg-primary/90 text-white shadow-[0_10px_30px_rgba(255,0,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,0,0,0.4)]'
-                          }`}
+                    <Button
+                      size="lg"
+                      onClick={() => window.location.href = plan.href!}
+                      className={`w-full font-semibold text-base py-6 transition-all duration-300 transform hover:scale-105 cursor-pointer ${plan.highlighted
+                        ? 'bg-gradient-to-r from-accent to-amber-600 hover:from-accent/90 hover:to-amber-700 text-white shadow-[0_10px_30px_rgba(255,184,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,184,0,0.4)]'
+                        : 'bg-primary hover:bg-primary/90 text-white shadow-[0_10px_30px_rgba(255,0,0,0.3)] hover:shadow-[0_15px_40px_rgba(255,0,0,0.4)]'
+                        }`}
+                    >
+                      {plan.cta}
+                      <svg
+                        className="ml-2 w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        {plan.cta}
-                        <svg
-                          className="ml-2 w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                          />
-                        </svg>
-                      </Button>
-                    </Link>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </Button>
                   ) : (
                     <Button
                       size="lg"

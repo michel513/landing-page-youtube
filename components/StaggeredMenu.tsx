@@ -394,10 +394,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   return (
     <div
-      className={`sm-scope z-40 ${isFixed ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden ' : 'w-full h-full'}`}
+      className={`sm-scope z-40 pointer-events-none ${isFixed ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden ' : 'w-full h-full'}`}
     >
       <div
-        className={(className ? className + ' ' : '') + 'staggered-menu-wrapper relative w-full h-full z-40'}
+        className={(className ? className + ' ' : '') + 'staggered-menu-wrapper relative w-full h-full z-40 pointer-events-none'}
         style={accentColor ? ({ ['--sm-accent' as any]: accentColor } as React.CSSProperties) : undefined}
         data-position={position}
         data-open={open || undefined}
@@ -425,9 +425,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <header
-          className={`staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] pointer-events-none z-20 transition-all duration-300 ${
-            scrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
-          }`}
+          className={`staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] pointer-events-none z-20 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+            }`}
           aria-label="Main navigation header"
         >
           <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
@@ -443,13 +442,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
           <button
             ref={toggleBtnRef}
-            className={`sm-toggle relative inline-flex items-center gap-[0.3rem] border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto transition-all duration-300 ${
-              open
-                ? 'text-black bg-transparent'
-                : scrolled
-                  ? 'text-white bg-primary/90 px-4 py-2'
-                  : 'text-[#e9e9ef] bg-transparent'
-            }`}
+            className={`sm-toggle relative inline-flex items-center gap-[0.3rem] border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto transition-all duration-300 ${open
+              ? 'text-black bg-transparent'
+              : scrolled
+                ? 'text-white bg-primary/90 px-4 py-2'
+                : 'text-[#e9e9ef] bg-transparent'
+              }`}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="staggered-menu-panel"
@@ -490,7 +488,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px] opacity-0 invisible"
+          className={`staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em overflow-y-auto z-10 backdrop-blur-[12px] opacity-0 invisible ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}
           style={{ WebkitBackdropFilter: 'blur(12px)' }}
           aria-hidden={!open}
         >
