@@ -67,7 +67,8 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-semibold shadow-[0_0_30px_rgba(255,0,0,0.3)] hover:shadow-[0_0_40px_rgba(255,0,0,0.5)] transition-all duration-300 transform hover:scale-105"
+                onClick={() => window.location.href = 'https://david-ndiaye.youcanbook.me/'}
+                className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-semibold shadow-[0_0_30px_rgba(255,0,0,0.3)] hover:shadow-[0_0_40px_rgba(255,0,0,0.5)] transition-all duration-300 transform hover:scale-105 cursor-pointer"
               >
                 Reserver un appel
                 <svg
@@ -88,7 +89,8 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-2 border-white/20 bg-white/5 hover:bg-white/10 text-white px-8 py-6 text-lg font-semibold backdrop-blur-sm transition-all duration-300"
+                onClick={() => window.location.href = 'https://buy.stripe.com/3cI9AT39LbCn5fb3gF6Na0k'}
+                className="w-full sm:w-auto border-2 border-white/20 bg-white/5 hover:bg-white/10 text-white px-8 py-6 text-lg font-semibold backdrop-blur-sm transition-all duration-300 cursor-pointer"
               >
                 Prendre un coaching
               </Button>
